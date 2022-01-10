@@ -633,7 +633,7 @@ class Model implements ArrayAccess, JsonSerializable
      */
     protected function isBuilderMethod($name)
     {
-        return method_exists(Builder::class, $name) && is_callable([Builder::class, $name]);
+        return method_exists(Builder::class, $name) && is_callable(Builder::class, $name);
     }
 
     /**
