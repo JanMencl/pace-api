@@ -2,7 +2,10 @@
 
 namespace Pace;
 
-use Doctrine\Common\Inflector\Inflector;
+//use Doctrine\Common\Inflector\Inflector;
+use Doctrine\Inflector\InflectorFactory;
+
+//use Doctrine\Inflector\Inflector;
 
 class Type
 {
@@ -92,7 +95,8 @@ class Type
      */
     public static function singularize($name)
     {
-        return Inflector::singularize($name);
+        $inflector = InflectorFactory::create()->build();
+        return $inflector->singularize($name);
     }
 
     /**
